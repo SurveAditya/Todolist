@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Create Task{% endblock %}
+
+{% block content %}
+<style>
+th {
+  background-color: gold;
+  color: white;
+}
+</style>
+<center>
+<div class="contain">
+<h1 style="color:white"> View Task </h1>
+<! #4CAF50 !>
+<h2 style="color:white">Welcome {{ user.username }}</h2>
+<table border = '3' width = '85%' style="color:white">
+	{% if data %}
+		<tr align = 'center'>
+			<th>Number</th>
+			<th>Task</th>
+			<th>Created On</th>
+			<th>Done?</th>
+		</tr>
+	{% endif %}
+		{% for d in data %}
+		<tr align = center>
+			<td>{{ forloop.counter }}</td>
+			<td>{{ d.task }}</td>
+			<td>{{ d.dt }}</td>
+			<td><a href = "/delete/{{ d.id }}" >Delete</a></td>
+		</tr>	
+		{% empty %}
+		<tr align = 'center'>
+			<td>No Data</tr>
+		</tr>
+		{% endfor %}
+</table>
+</div>
+</center>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Create Task{% endblock %}
+
+{% block content %}
+<center>
+	<div class="container">
+	<h1 style="color:white"> Create Task </h1>
+	<form method = 'POST'>
+	{% csrf_token %}
+	<center>
+		<table border = '0' style="color:white;">
+			{{ fm.as_table }}
+		</table>
+	</center>
+		<br>
+		<button>Submit</button>
+	</form>
+	<p style="color:white">{{ msg }}</p>
+	</div>
+</center>
+
+{% endblock %}

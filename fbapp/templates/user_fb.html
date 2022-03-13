@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %} {% endblock %}
+{% block content %}
+<center>
+	<div class="container">
+	<h1 style="color:white">Write Your Message</h1>
+	<div class="id">
+	<form method="POST">
+	{% csrf_token %}
+		<table style="color:white;">
+		
+			{{ fm.as_table }}
+		
+		</table>
+		<br>
+		<button>Submit</button>
+	</form>
+	</div>
+	<p style="color:white">{{ msg }}</p>
+	</div>
+</center>
+
+{% endblock %}

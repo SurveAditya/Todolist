@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}{% endblock %}
+
+{% block content %}
+<div class="Box">
+<h1 style="color:white"> 	Change password </h1>
+<form method="POST">
+{% csrf_token %}
+	<div class="inputBox" id="nav">
+	<input type="text" name="pw1" placeholder="Enter new password" required >
+	</div>
+	<div class="inputBox">
+	<input type="password" name="pw2" placeholder="Confirm password" required>
+	</div>
+	<input type="submit" value="Submit">
+	<br>
+	<br>
+	<p style="color:white">{{ msg }}</p>
+</div>
+</form>
+
+
+{% endblock %}
